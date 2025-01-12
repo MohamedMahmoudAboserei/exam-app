@@ -44,7 +44,7 @@ export default function NavbarSide() {
                     Dashboard
                 </Link>
                 <Link
-                    href={'/'}
+                    href={'/quiz-history'}
                     className="flex items-center px-6 mx-6 py-3 text-gray-700 hover:bg-blue-100 rounded-md"
                 >
                     <span className="mr-3">

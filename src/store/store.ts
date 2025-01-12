@@ -4,6 +4,7 @@ import { authReducer } from "./Authentication/authSlice";
 import subjectsReducer from "./Subjects/subjectsSlice";
 import { examsReducer } from "./Exams/examsSlice";
 import questionsReducer from './Questions/questionsSlice';
+import quizHistoryReducer from './HistorySlice/historySlice';
 
 export const store = configureStore({
     reducer: {
@@ -12,6 +13,7 @@ export const store = configureStore({
         subjects: subjectsReducer,
         exams: examsReducer,
         questions: questionsReducer,
+        quizHistory: quizHistoryReducer
     }
 });
 

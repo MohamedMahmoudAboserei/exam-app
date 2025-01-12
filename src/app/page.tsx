@@ -6,7 +6,7 @@ import SubjectsPage from "@/components/Subjects/Subjects";
 
 export default function Home() {
   return <>
-    <div className="relative flex mt-4">
+    <div className="relative flex flex-col md:flex-row mt-4">
       <NavbarSide />
       <main className="w-[86%] mx-auto space-y-4">
         <HeaderSections />
