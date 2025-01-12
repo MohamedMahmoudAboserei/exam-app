@@ -11,8 +11,7 @@ const ProgressBar: React.FC<ProgressBarProps> = ({ currentStep, totalSteps }) =>
             {Array.from({ length: totalSteps }, (_, index) => (
                 <span
                     key={index}
-                    className={`w-3 h-3 rounded-full ${index < currentStep ? "bg-blue-500" : "bg-gray-300"
-                        }`}
+                    className={`w-3 h-3 rounded-full ${index < currentStep ? "bg-blue-500" : "bg-gray-300"}`}
                 ></span>
             ))}
         </div>

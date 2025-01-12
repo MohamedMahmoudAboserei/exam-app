@@ -16,7 +16,7 @@ export default function ExamsList({ subjectId }: ExamsListProps) {
     const dispatch = useDispatch<storeDispatch>();
     const { exams, loading, error } = useSelector((state: storeState) => state.exams);
     const [showQuestions, setShowQuestions] = useState(false);
-    const [selectedExam, setSelectedExam] = useState<any>(null);
+    const [selectedExam, setSelectedExam] = useState<string | null>(null);
 
     const token = localStorage.getItem("token") ?? "";
 
@@ -27,7 +27,7 @@ export default function ExamsList({ subjectId }: ExamsListProps) {
     }, [dispatch, subjectId, token]);
 
     const handleStartExam = (exam: any) => {
-        setSelectedExam(exam);
+        setSelectedExam(exam._id);
         setShowQuestions(true);
     };
 
@@ -68,7 +68,7 @@ export default function ExamsList({ subjectId }: ExamsListProps) {
             </div>
 
             {showQuestions && selectedExam && (
-                <Questions exam={selectedExam} onClose={() => setShowQuestions(false)} />
+                <Questions examId={selectedExam} onClose={() => setShowQuestions(false)} />
             )}
         </>
     );

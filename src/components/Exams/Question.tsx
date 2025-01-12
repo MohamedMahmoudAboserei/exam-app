@@ -9,7 +9,7 @@ interface QuestionProps {
 }
 
 const Question: React.FC<QuestionProps> = ({ question, options, onSelectOption }) => {
-    const [selectedOption, setSelectedOption] = useState<number | null>(null);
+    const [selectedOption, setSelectedOption] = React.useState<number | null>(null);
 
     const handleSelectOption = (index: number) => {
         setSelectedOption(index);

@@ -3,7 +3,7 @@ import { registerReducer } from "./Authentication/registerSlice";
 import { authReducer } from "./Authentication/authSlice";
 import subjectsReducer from "./Subjects/subjectsSlice";
 import { examsReducer } from "./Exams/examsSlice";
-import { questionsReducer } from "./Questions/questionsSlice";
+import questionsReducer from './Questions/questionsSlice';
 
 export const store = configureStore({
     reducer: {

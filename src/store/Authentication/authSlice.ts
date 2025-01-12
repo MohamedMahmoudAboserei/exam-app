@@ -14,7 +14,7 @@ export const login = createAsyncThunk<LoginResponse, LoginValues, { rejectValue:
     'auth/login',
     async (values, { rejectWithValue }) => {
         try {
-            const { data } = await axios.post<LoginResponse>(`${process.env.API_URL}/api/v1/auth/signin`, values);
+            const { data } = await axios.post<LoginResponse>(`https://exam.elevateegy.com/api/v1/auth/signin`, values);
             return data;
         } catch (error: any) {
             const errorMessage = error.response?.data?.message || "Login failed";
@@ -28,7 +28,7 @@ export const forgetPassword = createAsyncThunk<string, ForgotPasswordValues, { r
     'auth/forgotPassword',
     async (values, { rejectWithValue }) => {
         try {
-            const { data } = await axios.post(`${process.env.API_URL}/api/v1/auth/forgotPassword`, values);
+            const { data } = await axios.post(`https://exam.elevateegy.com/api/v1/auth/forgotPassword`, values);
             return data.message;
         } catch (error: any) {
             const errorMessage = error.response?.data?.message || "Forgot password failed";
@@ -42,7 +42,7 @@ export const verifyResetCode = createAsyncThunk<string, VerifyResetCodeValues, {
     'auth/verifyResetCode',
     async (values, { rejectWithValue }) => {
         try {
-            const { data } = await axios.post(`${process.env.API_URL}/api/v1/auth/verifyResetCode`, values);
+            const { data } = await axios.post(`https://exam.elevateegy.com/api/v1/auth/verifyResetCode`, values);
             return data.status;
         } catch (error: any) {
             const errorMessage = error.response?.data?.message || "Verification failed";
@@ -56,7 +56,7 @@ export const resetPassword = createAsyncThunk<string, ResetPasswordValues, { rej
     'auth/resetPassword',
     async (values, { rejectWithValue }) => {
         try {
-            const { data } = await axios.post(`${process.env.API_URL}/api/v1/auth/resetPassword`, values);
+            const { data } = await axios.post(`https://exam.elevateegy.com/api/v1/auth/resetPassword`, values);
             return data.message;
         } catch (error: any) {
             const errorMessage = error.response?.data?.message || "Reset password failed";

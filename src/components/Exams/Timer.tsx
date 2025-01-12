@@ -6,13 +6,11 @@ interface TimerProps {
 }
 
 const Timer: React.FC<TimerProps> = ({ initialTime, onTimeEnd }) => {
-    const [timeRemaining, setTimeRemaining] = useState(initialTime);
+    const [timeRemaining, setTimeRemaining] = React.useState(initialTime);
 
-    useEffect(() => {
+    React.useEffect(() => {
         if (timeRemaining > 0) {
-            const timer = setInterval(() => {
-                setTimeRemaining((prev) => prev - 1);
-            }, 1000);
+            const timer = setInterval(() => setTimeRemaining((prev) => prev - 1), 1000);
             return () => clearInterval(timer);
         } else {
             onTimeEnd();

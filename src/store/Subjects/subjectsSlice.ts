@@ -22,7 +22,7 @@ export const fetchSubjects = createAsyncThunk<SubjectsResponse, number>(
     'subjects/fetchSubjects',
     async (page: number, { rejectWithValue }) => {
         try {
-            const response = await axios.get(`${process.env.API_URL}/api/v1/subjects`, {
+            const response = await axios.get('https://exam.elevateegy.com/api/v1/subjects', {
                 headers: {
                     token: localStorage.getItem("token")?? ""
                 },

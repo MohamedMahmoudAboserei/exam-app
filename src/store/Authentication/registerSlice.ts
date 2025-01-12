@@ -17,7 +17,7 @@ export const register = createAsyncThunk<
 >("auth/register", async (values, { rejectWithValue }) => {
     try {
         const { data } = await axios.post<RegisterResponse>(
-            `${process.env.API_URL}/api/v1/auth/signup`,
+            `https://exam.elevateegy.com/api/v1/auth/signup`,
             values
         );
         return data;

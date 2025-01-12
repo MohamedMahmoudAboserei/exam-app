@@ -26,7 +26,7 @@ export default function LogoutButton() {
                 return;
             }
 
-            await axios.get(`${process.env.API_URL}/api/v1/auth/logout`, {
+            await axios.get("https://exam.elevateegy.com/api/v1/auth/logout", {
                 headers: {
                     token: token,
                 },

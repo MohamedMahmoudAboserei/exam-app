@@ -24,9 +24,9 @@ const initialState: ExamsState = {
 
 export const fetchExams = createAsyncThunk(
     'exams/fetchExams',
-    async ({ subjectId, token }: { subjectId: string; token: string }) => {
+    async ({ subjectId }: { subjectId: string; token: string }) => {
         const response = await axios.get(
-            `${process.env.API_URL}/api/v1/exams?subject=${subjectId}`,
+            `https://exam.elevateegy.com/api/v1/exams?subject=${subjectId}`,
             {
                 headers: {
                     token: localStorage.getItem("token") ?? ""
