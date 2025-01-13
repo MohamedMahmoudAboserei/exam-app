@@ -6,7 +6,7 @@ import Rectangle from "@/public/images/person/Rectangle 289.png";
 export default function HeaderSections() {
 
     return <>
-        <div className="flex items-center gap-4 px-4 py-2">
+        <div className="flex items-center gap-4 px-4 py-2 max-md:hidden">
             <div className="relative flex-grow">
                 <i className="fas fa-search absolute left-3 top-1/3 text-gray-400"></i>
                 <input

@@ -3,7 +3,7 @@
 import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-
+import { Menu, Search } from 'lucide-react';
 import FinalLogo from "@/public/images/logo/Final Logo 1.png";
 import dashboard from "@/public/images/icon/Vector.svg";
 import quize from "@/public/images/icon/quize.svg";
@@ -13,18 +13,33 @@ export default function NavbarSide() {
     const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
     return <>
-        <button
-            onClick={() => setIsSidebarOpen(!isSidebarOpen)}
-            className={`md:hidden fixed top-4 left-4 z-50 bg-blue-600 text-white p-2 rounded shadow-lg `}
-        >
-            ☰ Menu
-        </button>
+        <nav className="md:hidden fixed top-0 left-0 right-0 bg-[#4461F2] z-50 flex items-center justify-between px-4 py-2">
+            <button
+                onClick={() => setIsSidebarOpen(!isSidebarOpen)}
+                className="text-white p-2"
+            >
+                <Menu className="h-6 w-6" />
+            </button>
 
-        <nav className={
-            `fixed left-0 w-56 text-left transform ${isSidebarOpen ? "translate-x-0" : "-translate-x-full"
-            } transition-transform duration-300 ease-in-out md:translate-x-0 md:relative z-40`
-        }>
-            
+            <button className="text-white p-2">
+                <Search className="h-6 w-6" />
+            </button>
+
+            <div className="h-8 w-8 rounded-full overflow-hidden">
+                <Image
+                    src={FinalLogo}
+                    alt="Profile"
+                    width={32}
+                    height={32}
+                    className="h-full w-full object-cover"
+                />
+            </div>
+        </nav>
+
+        <nav className={`absolute top-0 left-0 right-0 w-56 bg-white shadow-lg transform 
+                ${isSidebarOpen ? "translate-x-0" : "-translate-x-full"} 
+                transition-transform duration-300 ease-in-out md:translate-x-0 md:relative z-40`}
+        >
             <div className="px-6 py-4">
                 <Image
                     src={FinalLogo}
@@ -52,8 +67,6 @@ export default function NavbarSide() {
                     </span>
                     Quiz History
                 </Link>
-            </div>
-            <div className="absolute">
                 <LogoutButton />
             </div>
         </nav>
